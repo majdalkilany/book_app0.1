@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../../layout/head')%>
+    <title>Book Details</title>
+</head>
+
+<body>
+    <header>
+        <%- include('../../layout/header')%>
+        <section id="pageTitle">Book Details</section>
+    </header>
+    <main>
+        <%- include('./detail.ejs')%>
+        <!-- <div>
+            <img src="<%= book.imageurl%>" />
+            <h3> <%= book.title %> </h3>
+            <h4> <%= book.authors %> </h4>
+            <p style="background-color: #eeeeee; border-radius: 5px; padding: 0 5%; line-height: 150%;">
+                <%= book.description%> </p>
+            <h4> ISBN: <%= book.isbn%> </h4>
+            <h4> BookShelf: <%= book.bookshelf%> </h4>
+            <button>Update Details</button>
+            <form action="/delete/<%=book.bookid%>?_method=DELETE" method="POST">
+                <button type="submit">Delete Book</button>
+            </form>
+        </div> -->
+
+        <%- include('./edit.ejs')%>
+        <!-- <form action="/update/<%= book.bookid%>?_method=PUT" method="POST" class="updateForm">
+            <input type="text" name="title" value="<%= book.title %>" placeholder="Title">
+            <input type="text" name="author" value="<%= book.authors %>" placeholder="Author">
+            <input type="text" name="isbn" value="<%= book.isbn %>" placeholder="ISBN">
+            <input type="text" name="imageurl" value="<%= book.imageurl %>" placeholder="Image Link">
+            <textarea name="description" id="" cols="80" rows="10" placeholder="Description"><%= book.description%></textarea>
+            <button type="submit">Update</button>
+        </form> -->
+
+
+    </main>
+
+    <%- include('../../layout/footer')%>
+
+</body>
+
+</html>
