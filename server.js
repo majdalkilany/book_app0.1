@@ -125,6 +125,7 @@ function addBookToCollection(req, res){
             console.log('stored 2')
             res.redirect(`/books/${result.rows[0].bookid}`)
         }
+        
         else {
             console.log('not stored 2')
             const url = `https://www.googleapis.com/books/v1/volumes/${bookID}`;
