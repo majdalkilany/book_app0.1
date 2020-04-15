@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../../layout/head')%>
+    <title>Search</title>
+</head>
+<body>
+    <header>
+        <%- include('../../layout/header')%>
+
+        <section id="pageTitle">Search by Title or Author</section>
+    </header>
+
+    <form action="/searches/" method="POST" class="searchForm">
+        <input type="text" name="keyword" id="keyword" placeholder="Enter a title or author" required>
+        <br>
+        <label >
+            <span>Title</span>
+            <input type="radio" name="searchBy" value="title" id="title" required>
+        </label>
+        <br>
+        <label >
+            <span>Author</span>
+            <input type="radio" name="searchBy" value="author" id="author" required>
+        </label>
+        <br>
+        <input type="submit" value="Search the Google Books API">
+    </form>
+
+    <%- include('../../layout/footer')%>
+
+</body>
+</html>

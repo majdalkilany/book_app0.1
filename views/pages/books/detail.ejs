@@ -1,0 +1,13 @@
+<div>
+    <img src="<%= book.imageurl%>" />
+    <h3> <%= book.title %> </h3>
+    <h4> <%= book.authors %> </h4>
+    <p style="background-color: #eeeeee; border-radius: 5px; padding: 0 5%; line-height: 150%;">
+        <%= book.description%> </p>
+    <h4> ISBN: <%= book.isbn%> </h4>
+    <h4> BookShelf: <%= book.bookshelf%> </h4>
+    <button id="updateButton">Update Details</button>
+    <form action="/delete/<%=book.bookid%>?_method=DELETE" method="POST">
+        <button type="submit">Delete Book</button>
+    </form>
+</div>

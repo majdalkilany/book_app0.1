@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../../layout/head')%>
+    <title>Search Results</title>
+</head>
+
+<body>
+    <header>
+        <%- include('../../layout/header')%>
+
+        <section id="pageTitle">Search Results</section>
+    </header>
+
+    <main>
+        <% books.forEach(book => {%>
+        <div>
+            <img src="<%= book.imageUrl%>" />
+            <h3> <%= book.title %> </h3>
+            <h4> <%= book.authors %> </h4>
+            <p> <%= book.description %> </p>
+            <form action="/books/" method="POST">
+                <input type="hidden" name="bookID" value="<%= book.bookID %>">
+                <input type="submit" value="Select This Book">
+            </form>
+        </div>
+        <br>
+        <% }) %>
+    </main>
+
+    <%- include('../../layout/footer')%>
+
+</body>
+
+</html>
