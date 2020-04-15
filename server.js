@@ -27,12 +27,15 @@ app.use(methodOverride('_method'));
 
 app.set('view engine', 'ejs');
 
+
+
 app.get('/', collectionHandler);
 app.get('/searches/new', searchFormHandler);
 app.post('/searches', searchResultsHandler);
 app.get('/books/:bookID', bookDetailsHandler);
 app.post('/books', addBookToCollection);
 app.put('/update/:bookid', updateBookDetails);
+
 
 
 
@@ -53,6 +56,8 @@ function searchFormHandler(req, res) {
 }
 
 
+
+
 function searchResultsHandler(req, res) {
     // console.log(req.body);
     const title = req.body.keyword;
@@ -70,6 +75,8 @@ function searchResultsHandler(req, res) {
                 books.push(book);
             }
         });
+
+
         // console.log(apiData.body.items[0].volumeInfo);
         console.log(books.length);
         res.render('./pages/searches/show', { books: books });
@@ -78,6 +85,8 @@ function searchResultsHandler(req, res) {
         errorHandler(err, req, res);
     });
 }
+
+
 
 
 function bookDetailsHandler(req, res){
@@ -91,6 +100,8 @@ function bookDetailsHandler(req, res){
             res.render('./pages/books/show', { book: result.rows[0] })
             // res.status(200).json(result.rows[0])
         }
+
+
         else {
             const url = `https://www.googleapis.com/books/v1/volumes/${bookID}`;
             superagent.get(url).then(result => {
@@ -101,6 +112,7 @@ function bookDetailsHandler(req, res){
         }
     })
 }
+
 
 
 
