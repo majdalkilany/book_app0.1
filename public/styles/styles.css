@@ -7,13 +7,39 @@ body{
 }
 
 
-header{
+header nav{
     background-color: black;
     font-family: sans-serif;
     color: #c3c3c3;
     position: sticky;
     top: 0;
+    font-size: 180%;
 }
+
+header div{
+    transition: all 0.8s ease;
+    display: none;
+    justify-content: space-around;
+    background-color: #000000c7;
+}
+
+.flex{
+    display: flex;
+}
+
+#pageTitle{
+    font-size: 85%;
+}
+
+/* span{
+    margin-left: 1%;
+    padding-top: 0.3%;
+    background-color: whitesmoke;
+    border-radius: 50% ;
+    padding: 0 1%;
+    text-align: center;
+    color: gray;
+} */
 
 nav{
     display: grid;
@@ -48,6 +74,23 @@ header #pageTitle{
     align-items: center;
     justify-content: center;
     height: 5vh;
+}
+
+main div{
+    width: 85%;
+    padding: 5% 0;
+    margin: 7% auto auto auto;
+    background-color: #d8d8d8;
+    height: 70vh;
+    display: grid;
+    grid-template-columns: 70%;
+    justify-content: center;  
+    align-items: space-around;  
+    box-shadow: 0px 0px 22px darkslategray;
+    margin-bottom: 10%;
+}
+
+
 }
 
 main div{

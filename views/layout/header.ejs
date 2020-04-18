@@ -1,4 +1,18 @@
 <nav>
-    <a href="/"><h1>My Books</h1></a>
-    <a href="#"><i class="fa fa-bars"></i></a>
+    <a href="/"><h1>Best Books!</h1></a>
+    <a id="ham" href="#"><i class="fa fa-bars"></i></a>
 </nav>
+<div id="menu">
+    <a href="/searches/new">Search</a>
+    <a href="/">Home</a>
+</div>
+
+<script>
+    $( document ).ready(function() {
+        let hamButton = $('#ham');
+        hamButton.click(function(){
+            let menu = $('#menu');
+            menu.toggleClass('flex');
+        })
+    });
+</script>
