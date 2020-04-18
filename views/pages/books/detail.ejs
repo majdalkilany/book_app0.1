@@ -6,8 +6,20 @@
         <%= book.description%> </p>
     <h4> ISBN: <%= book.isbn%> </h4>
     <h4> BookShelf: <%= book.bookshelf%> </h4>
-    <button id="updateButton">Update Details</button>
-    <form action="/delete/<%=book.bookid%>?_method=DELETE" method="POST">
-        <button type="submit">Delete Book</button>
+    <form id="detailsForm" action="/delete/<%=book.bookid%>?_method=DELETE" method="POST">
+        <button type="button" id="updateButton">Update Details</button>
+        <button id="deleteButton" type="submit">Delete Book</button>
     </form>
 </div>
+
+
+
+<script>
+    $( document ).ready(function() {
+        let updateButton = $('#updateButton');
+        updateButton.click(function(){
+            let editForm = $('#editForm');
+            editForm.toggle();
+        })
+    });
+</script>
